@@ -1,0 +1,27 @@
+#Menghitung Pembayaran Angsuran (nilai k)
+annuitasbungamajemuknominal <- function(num, i, t, nilai, m=TRUE, n=m*t, j=i/m, v=1/(1+j))
+
+#Keterangan
+#n : banyaknya pembayaran
+#j : bunga
+#v : faktor diskon
+
+#Pilihan num
+#satu = annuitas awal
+#dua = annuitas akhir
+  
+  switch(num,  
+         satu = {
+           k_anawal = nilai/((1-v^n)/(j))
+           cat("nilai k pv awal =",k_anawal,"\n")
+           k_snawal = nilai/(((1+j)^n-1)/(j))
+           cat("nilai k akumulasi awal =",k_snawal)
+           
+         },
+         dua = {
+           k_anakhir = nilai/((1-v^n)/(j*v))
+           cat("nilai k pv akhir =",k_anakhir,"\n")
+           k_snakhir = nilai/((((1+j)^n)-1)/(j*v))
+           cat("nilai k akumulasi akhir =",k_snakhir)
+         }
+  )
