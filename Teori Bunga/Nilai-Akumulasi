@@ -3,23 +3,23 @@ Nilaiakumulasi <- function(num, k,i,t,m=TRUE)
   #k: modal
   #i: bunga
   #t: tahun
-  #m: bunga majemuk (opsional)
+  #m: banyaknya membayar
   
   #Pilihan (num)
-  #1:bunga tunggal
-  #2:bunga majemuk nominal
-  #3:bunga majemuk kontinu
+  #1:nilai akumulasi untuk bunga tunggal
+  #2:nilai akumulasi untuk bunga majemuk nominal
+  #3:nilai akumulasi untuk bunga majemuk kontinu
    switch(num, 
          satu = {
            bungatunggal = k*(1+i*t)
-           print(bungatunggal)
+           cat("Nilai akumulasi bunga majemuk kontinu:",bungatunggal)
          },
          dua = {
            bungamajemuknominal = k*(1+i/m)^(m*t)
-           print(bungamajemuknominal)
+           cat("Nilai akumulasi bunga majemuk kontinu:",bungamajemuknominal)
          },
          tiga={
            bungamajemukkontinu = akumulasi3 = k*exp(i*t)
-           print(bungamajemukkontinu)
+           cat("Nilai akumulasi bunga majemuk kontinu:",bungamajemukkontinu)
          }
   )
