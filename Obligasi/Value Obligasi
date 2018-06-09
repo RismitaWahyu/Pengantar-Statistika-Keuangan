@@ -1,0 +1,43 @@
+#Menghitung Value Obligasi 
+
+valobligasi<-function(f,r,i,ttm,m){
+  
+  #f=nilai nominal
+  #r=tingkat kupon
+  #i=tingkat yield
+  #ttm=time to maturnity
+  #m=banyak pemberian bunga dalam 1 tahun
+  #t=tahun
+  #Bm=harga obligasi u/pemilik baru
+  #frk=harga obligasi u/pemilik lama
+  t=ceiling((ttm*m)+1)
+  b=ttm*m- floor(ttm*m)
+  k=1-b
+  rbin=r/m
+  ibin=i/m
+  vbin=1/(1+ibin)
+  an=(1-vbin^t)/ibin;
+  {
+    Bt=f*rbin*an+f*vbin^t
+    
+    
+    #THEORITICAL METHOD
+    Bf1=Bt*(1+ibin)^k
+    frk1=f*rbin*((1+ibin)^k-1)/ibin
+    Bm1=Bf1-frk1
+    cat("harga obligasi theorical method=", Bm1, "\n")
+    
+    #PRACTICAL METHOD
+    Bf2=Bt*(1+k*ibin)
+    frk2=k*f*rbin
+    Bm2=Bf2-frk2
+    cat("harga obligasi practical method=", Bm2, "\n")
+    
+    #SEMI-THEORETICAL METHOD
+    Bf3=Bt*(1+ibin)^k
+    frk3=k*f*rbin
+    Bm3=Bf3-frk3
+    cat("harga obligasi semi-theoretical method=", Bm3, "\n")
+    
+  }
+}
