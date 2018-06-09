@@ -1,0 +1,26 @@
+#Menghitung Harga Obligasi
+
+obligasi<-function(f,r,i,t,m){
+
+#keterangan
+#P: harga obligasi
+#f: nilai nominal obligasi (face value)
+#r: tingkat kupon
+#i: tingkat yield
+#t: tahun
+#n: banyak pembayaran kupon dari pembelian obligasi hingga jatuh tempo
+
+n = t*m;
+rb =  r/m;
+ib = i/m;
+vb = 1/(1+ib);
+anb = (1 - (vb^n))/ib;
+{
+P = (f*rb*anb)+(f*(vb^n))
+cat("Harga Obligasi = ",P)}
+}
+
+#Harga diskon
+#par : ketika r = i
+#premium : ketika r > i
+#discount : ketika r < i 
