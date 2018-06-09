@@ -29,4 +29,14 @@ payment=c(output[ ,2]) #besaran pembayaran hutang (payment)
 interest=c(output[ ,3]) #bunga (interest due)
 principal=c(output[ ,4]) #pokok hutang yang terbayar (principal repaid)
 balance=c(output[ ,5]) #besaran saldo dari hutang yang belum terbayar
-SCH
+SCHEDULE
+}
+
+coba1=amortisasi(20000,0.189,1,12)
+coba1
+jumlah_bunga=sum(coba1$interest)
+jumlah_bunga
+saldo=coba1$balance
+saldo
+plot(saldo,type="l",col="red",lwd=2, xlab="period",ylab="balance")
+
