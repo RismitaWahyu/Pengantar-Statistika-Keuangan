@@ -2,7 +2,7 @@
 annuitasbungamajemuknominal <- function(num, i, t, nilai, m=TRUE, n=m*t, j=i/m, v=1/(1+j))
 
 #Keterangan
-#n : banyaknya pembayaran
+#n : banyaknya cicilan ke-n
 #j : bunga
 #v : faktor diskon
 
